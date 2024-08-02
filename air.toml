@@ -1,0 +1,61 @@
+# .air.toml
+
+# Root directory of your project
+root = "."
+
+# Watch the files and directories
+[watch]
+# List of directories to watch
+dirs = [
+  "cmd",
+  "pkg",
+  "internal",
+]
+
+# List of files to watch
+files = [
+  "*.go",
+  "*.tpl",
+  "*.tmpl",
+  "*.html",
+]
+
+# List of files to ignore
+# The default is to ignore files like .gitignore
+exclude = [
+  "vendor/*",
+  "build/*",
+  "tests/*",
+]
+
+# Command to run when a change is detected
+[build]
+# Command to build your application
+cmd = "go build -o ./bin/app ./cmd/main.go"
+
+# Optional: command to run the application
+[run]
+cmd = "./bin/app"
+
+# The directory where the build output should be placed
+# Default is "bin"
+bin = "bin"
+
+# The path where the application should be executed
+# Default is "."
+cwd = "."
+
+# Optional: delay before restarting the application after a change
+[server]
+# Delay in seconds
+delay = 1
+
+# Optional: use different log levels for the server
+log_level = "debug"
+
+# Optional: specify the log file location
+log_file = "./logs/air.log"
+
+# Specify if you want to run the app on file change
+
+run_on_change = true
